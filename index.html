@@ -7,781 +7,790 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Simon Berlendis</title>
     <style>
- 
-
- 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #722F37;
-    --secondary-color: #5a252c;
-    --accent-color: #9b4a54;
-    --text-color: #2d2d2d;
-    --text-light: #5a5a5a;
-    --bg-color: #ffffff;
-    --bg-light: #fdf8f8;
-    --border-color: #e8dede;
-    --gold: #c9a962;
-}
-
-body {
-    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-    line-height: 1.7;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    font-size: 14px;
-}
-
-.container {
-    max-width: 210mm;
-    margin: 0 auto;
-    background: white;
-}
-
- 
-.header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 40px 45px;
-    position: relative;
-}
-
-.header::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gold);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 25px;
-}
-
-.header-photo img {
-    width: 105px;
-    height: 105px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--gold);
-}
-
-.header-photo.photo-grayscale img {
-    filter: grayscale(100%);
-}
-
-.header-photo.photo-square img {
-    border-radius: 8px;
-}
-
-.header-main {
-    flex-grow: 1;
-}
-
-.header-main h1 {
-    font-size: 2.3em;
-    font-weight: 400;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
-
-.header-main .title {
-    font-size: 1.15em;
-    opacity: 0.95;
-    font-style: italic;
-    font-weight: 300;
-}
-
-.contact-info {
-    text-align: right;
-    font-size: 0.9em;
-}
-
-.contact-item {
-    margin-bottom: 5px;
-}
-
-.contact-icon {
-    display: inline-block;
-    width: 22px;
-    text-align: center;
-    color: var(--gold);
-    font-weight: bold;
-}
-
-.contact-info a {
-    color: white;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    color: var(--gold);
-}
-
- 
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr 270px;
-    gap: 0;
-}
-
-.left-column {
-    padding: 30px 35px;
-}
-
-.right-column {
-    background-color: var(--bg-light);
-    padding: 30px 25px;
-    border-left: 3px solid var(--gold);
-}
-
- 
-.section {
-    margin-bottom: 28px;
-}
-
-.section:last-child {
-    margin-bottom: 0;
-}
-
-.section-title {
-    font-size: 1.05em;
-    font-weight: 400;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding-bottom: 10px;
-    margin-bottom: 18px;
-    border-bottom: 2px solid var(--primary-color);
-    position: relative;
-}
-
-.section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background: var(--gold);
-}
-
- 
-.summary {
-    color: var(--text-light);
-    text-align: justify;
-    font-style: italic;
-    border-left: 3px solid var(--gold);
-    padding-left: 15px;
-}
-
- 
-.experience-item {
-    margin-bottom: 24px;
-    page-break-inside: avoid;
-}
-
-.experience-item:last-child {
-    margin-bottom: 0;
-}
-
-.experience-header {
-    margin-bottom: 8px;
-}
-
-.experience-title {
-    font-weight: 600;
-    font-size: 1.05em;
-    color: var(--text-color);
-}
-
-.experience-company {
-    color: var(--primary-color);
-    font-style: italic;
-}
-
-.experience-meta {
-    font-size: 0.85em;
-    color: var(--text-light);
-    margin-top: 3px;
-}
-
-.experience-description {
-    margin: 10px 0;
-    color: var(--text-light);
-}
-
-.highlights {
-    list-style: none;
-    padding-left: 0;
-}
-
-.highlights li {
-    position: relative;
-    padding-left: 18px;
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.highlights li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    transform: rotate(45deg);
-}
-
- 
-.education-item {
-    margin-bottom: 18px;
-}
-
-.education-item:last-child {
-    margin-bottom: 0;
-}
-
-.education-degree {
-    font-weight: 600;
-}
-
-.education-institution {
-    color: var(--primary-color);
-    font-style: italic;
-}
-
-.education-meta {
-    font-size: 0.85em;
-    color: var(--text-light);
-}
-
- 
-.skill-category {
-    margin-bottom: 14px;
-}
-
-.skill-category:last-child {
-    margin-bottom: 0;
-}
-
-.skill-category-name {
-    font-weight: 600;
-    font-size: 0.85em;
-    margin-bottom: 6px;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.skill-tag {
-    background-color: white;
-    color: var(--text-color);
-    padding: 4px 10px;
-    font-size: 0.8em;
-    border: 1px solid var(--border-color);
-    border-left: 2px solid var(--gold);
-}
-
- 
-.language-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-    padding-bottom: 8px;
-    border-bottom: 1px dotted var(--border-color);
-}
-
-.language-item:last-child {
-    border-bottom: none;
-}
-
-.language-name {
-    font-weight: 500;
-}
-
-.language-level {
-    color: var(--text-light);
-    font-style: italic;
-}
-
- 
-.certification-item {
-    margin-bottom: 12px;
-    font-size: 0.9em;
-    padding-left: 12px;
-    border-left: 2px solid var(--gold);
-}
-
-.certification-name {
-    font-weight: 500;
-}
-
-.certification-meta {
-    color: var(--text-light);
-    font-size: 0.85em;
-    font-style: italic;
-}
-
- 
-.project-item {
-    margin-bottom: 16px;
-}
-
-.project-name {
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.project-description {
-    font-size: 0.9em;
-    color: var(--text-light);
-    margin: 4px 0;
-}
-
-.project-tech {
-    font-size: 0.8em;
-    color: var(--primary-color);
-    font-style: italic;
-}
-
- 
-.interests-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.interest-item {
-    background-color: white;
-    padding: 5px 12px;
-    font-size: 0.85em;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-}
-
- 
-@media screen and (max-width: 768px) {
-    .main-content {
-        grid-template-columns: 1fr;
-    }
-
-    .right-column {
-        border-left: none;
-        border-top: 3px solid var(--gold);
-    }
-}
-
- 
-@media print {
-    body {
-        font-size: 11pt;
-    }
-
-    .container {
-        max-width: 100%;
-    }
-
-    .section {
-        page-break-inside: avoid;
-    }
-}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #722F37;
+            --secondary-color: #5a252c;
+            --accent-color: #9b4a54;
+            --text-color: #2d2d2d;
+            --text-light: #5a5a5a;
+            --bg-color: #ffffff;
+            --bg-light: #fdf8f8;
+            --border-color: #e8dede;
+            --gold: #c9a962;
+        }
+
+        body {
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 45px;
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .header-photo img {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+        }
+
+        .header-photo.photo-grayscale img {
+            filter: grayscale(100%);
+        }
+
+        .header-photo.photo-square img {
+            border-radius: 8px;
+        }
+
+        .header-main {
+            flex-grow: 1;
+        }
+
+        .header-main h1 {
+            font-size: 2.3em;
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .header-main .title {
+            font-size: 1.15em;
+            opacity: 0.95;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9em;
+        }
+
+        .contact-item {
+            margin-bottom: 5px;
+        }
+
+        .contact-icon {
+            display: inline-block;
+            width: 22px;
+            text-align: center;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--gold);
+        }
+
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 270px;
+            gap: 0;
+        }
+
+        .left-column {
+            padding: 30px 35px;
+        }
+
+        .right-column {
+            background-color: var(--bg-light);
+            padding: 30px 25px;
+            border-left: 3px solid var(--gold);
+        }
+
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.05em;
+            font-weight: 400;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            border-bottom: 2px solid var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+
+        .summary {
+            color: var(--text-light);
+            text-align: justify;
+            font-style: italic;
+            border-left: 3px solid var(--gold);
+            padding-left: 15px;
+        }
+
+
+        .experience-item {
+            margin-bottom: 24px;
+            page-break-inside: avoid;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            margin-bottom: 8px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: var(--text-color);
+        }
+
+        .experience-company {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .experience-meta {
+            font-size: 0.85em;
+            color: var(--text-light);
+            margin-top: 3px;
+        }
+
+        .experience-description {
+            margin: 10px 0;
+            color: var(--text-light);
+        }
+
+        .highlights {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlights li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .highlights li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+
+        .education-item {
+            margin-bottom: 18px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-degree {
+            font-weight: 600;
+        }
+
+        .education-institution {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .education-meta {
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+
+
+        .skill-category {
+            margin-bottom: 14px;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category-name {
+            font-weight: 600;
+            font-size: 0.85em;
+            margin-bottom: 6px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background-color: white;
+            color: var(--text-color);
+            padding: 4px 10px;
+            font-size: 0.8em;
+            border: 1px solid var(--border-color);
+            border-left: 2px solid var(--gold);
+        }
+
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            padding-bottom: 8px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-name {
+            font-weight: 500;
+        }
+
+        .language-level {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+
+        .certification-item {
+            margin-bottom: 12px;
+            font-size: 0.9em;
+            padding-left: 12px;
+            border-left: 2px solid var(--gold);
+        }
+
+        .certification-name {
+            font-weight: 500;
+        }
+
+        .certification-meta {
+            color: var(--text-light);
+            font-size: 0.85em;
+            font-style: italic;
+        }
+
+
+        .project-item {
+            margin-bottom: 16px;
+        }
+
+        .project-name {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .project-description {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin: 4px 0;
+        }
+
+        .project-tech {
+            font-size: 0.8em;
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .interest-item {
+            background-color: white;
+            padding: 5px 12px;
+            font-size: 0.85em;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .right-column {
+                border-left: none;
+                border-top: 3px solid var(--gold);
+            }
+        }
+
+
+        @media print {
+            body {
+                font-size: 11pt;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        
-        <header class="header">
-            <div class="header-content">
-                
-                <div class="header-main">
-                    <h1>Simon Berlendis</h1>
-                    <div class="title">Ingénieur développeur</div>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item"><span class="contact-icon">✉️</span> <a href="mailto:simon.berlendis@gmail.com">simon.berlendis@gmail.com</a></div>
-                    <div class="contact-item"><span class="contact-icon">📞</span> &#43;33 6 38 66 42 14</div>
-                    <div class="contact-item"><span class="contact-icon">🏠</span> Grenoble, France</div>
-                    <div class="contact-item"><span class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+<div class="container">
+
+    <header class="header">
+        <div class="header-content">
+
+            <div class="header-main">
+                <h1>Simon Berlendis</h1>
+                <div class="title">Ingénieur développeur</div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item"><span class="contact-icon">✉️</span> <a
+                        href="mailto:simon.berlendis@gmail.com">simon.berlendis@gmail.com</a></div>
+                <div class="contact-item"><span class="contact-icon">📞</span> &#43;33 6 38 66 42 14</div>
+                <div class="contact-item"><span class="contact-icon">🏠</span> Grenoble, France</div>
+                <div class="contact-item"><span class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                             fill="currentColor" style="vertical-align: middle;">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
-                    </span> <a href="https://linkedin.com/in/simon-berlendis" target="_blank">linkedin.com/in/simon-berlendis</a></div>
-                    <div class="contact-item"><span class="contact-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                    </span> <a href="https://linkedin.com/in/simon-berlendis" target="_blank">linkedin.com/in/simon-berlendis</a>
+                </div>
+                <div class="contact-item"><span class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                             fill="currentColor" style="vertical-align: middle;">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
-                    </span> <a href="https://github.com/SimonBerlendis" target="_blank">github.com/SimonBerlendis</a></div>
-                    
+                    </span> <a href="https://github.com/SimonBerlendis" target="_blank">github.com/SimonBerlendis</a>
                 </div>
-            </div>
-        </header>
 
-        
-        <div class="main-content">
-            
-            <div class="left-column">
-                
-                <section class="section">
-                    <h2 class="section-title">Summary</h2>
-                    <p class="summary">Passionné par le software craft, l&#39;agilité et l&#39;architecture moderne, je cherche aujourd&#39;hui à rejoindre une équipe qui, comme moi, vise l&#39;excellence technique pour construire des produits logiciels durables, de qualité et surtout au plus proche des besoins métiers. J&#39;ai un attrait certain pour la résolution de problèmes complexes et pour trouver des solutions simples, efficaces et adaptées au contexte. J&#39;ai également une soif insatiable d&#39;enrichir et de partager mes connaissances.
-</p>
-                </section>
-                
-
-                
-                <section class="section">
-                    <h2 class="section-title">Professional Experience</h2>
-                    
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="experience-title">Développeur full-stack confirmé</span>
-                                <span class="experience-company"> - Sogilis (ESN)</span>
-                            </div>
-                            <div class="experience-meta">2022-01 - present | Grenoble</div>
-                        </div>
-                        <p class="experience-description">Développement full-stack et expertise technique chez Sogilis</p>
-                        
-                        <ul class="highlights">
-                            
-                            <li>Développement d&#39;un module python d&#39;interfaçage avec gRPC</li>
-                            
-                            <li>Mise en place d&#39;un système de tests d&#39;intégration en approval testing</li>
-                            
-                            <li>Développement de nouveaux modules algorithmiques par itération</li>
-                            
-                            <li>Analyse de la qualité logiciel et de la dette technique avec CodeScene</li>
-                            
-                            <li>Accompagnement sur la spécification des besoins et la recherche de feedback utilisateur</li>
-                            
-                            <li>Mise en place de l&#39;architecture client-serveur</li>
-                            
-                            <li>Mise en place d&#39;une stratégie de tests automatisés</li>
-                            
-                            <li>Aide sur le développement d&#39;algorithme de computer vision</li>
-                            
-                            <li>Automatisation du déploiement sur machine</li>
-                            
-                            <li>Développement algorithmique</li>
-                            
-                            <li>Refactoring et modularisation de la base de code</li>
-                            
-                            <li>Migration de la base de code (ex: java 11) et dockerisation</li>
-                            
-                            <li>Reprise en main de la CI et des tests automatisés</li>
-                            
-                            <li>Développement d&#39;une solution interne pour poser des jours de congé (Angular, TS &amp; Kotlin)</li>
-                            
-                            <li>Leader et animation d&#39;un pôle de partage de connaissance</li>
-                            
-                            <li>Mise en place et animation de formations internes</li>
-                            
-                            <li>Aide au recrutement et suivi de période d&#39;essai</li>
-                            
-                            <li>Participation à des avant-ventes et qualification de projet</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="experience-title">Associé de recherche</span>
-                                <span class="experience-company"> - University of Arizona, USA &amp; CERN</span>
-                            </div>
-                            <div class="experience-meta">2018-02 - 2021-12 | International</div>
-                        </div>
-                        <p class="experience-description">Recherche en physique des particules et analyse de données du LHC</p>
-                        
-                        <ul class="highlights">
-                            
-                            <li>Coordination de deux équipes de projet d&#39;analyse</li>
-                            
-                            <li>Identification d&#39;événements rares par apprentissage supervisé (BDT, NN)</li>
-                            
-                            <li>Mise en place d&#39;un nouveau système d&#39;acquisition de données</li>
-                            
-                            <li>Encadrement de trois doctorants</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <div>
-                                <span class="experience-title">Doctorant</span>
-                                <span class="experience-company"> - LPSC</span>
-                            </div>
-                            <div class="experience-meta">2014-07 - 2017-10 | Grenoble</div>
-                        </div>
-                        <p class="experience-description">Recherche de nouveaux phénomènes physiques dans les données du LHC</p>
-                        
-                        <ul class="highlights">
-                            
-                            <li>Modélisation de bruit de fond par approche data-driven</li>
-                            
-                            <li>Modélisation de signal par simulations Monte-Carlo</li>
-                            
-                            <li>Test d&#39;hypothèses pour différents scénarios de physique</li>
-                            
-                        </ul>
-                        
-                    </div>
-                    
-                </section>
-                
-
-                
-                <section class="section">
-                    <h2 class="section-title">Education</h2>
-                    
-                    <div class="education-item">
-                        <div class="education-degree">PhD - Physique des particules Expérimentale</div>
-                        <div class="education-institution">Université Grenoble-Alpes</div>
-                        <div class="education-meta">2014 - 2017 | Grenoble</div>
-                        
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-degree">Master - Physique subatomique et Astroparticule</div>
-                        <div class="education-institution">Université Grenoble-Alpes</div>
-                        <div class="education-meta">2012 - 2014 | Grenoble</div>
-                        <p class="experience-description">1st/18</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-degree">Diplôme d&#39;ingénieur - Physique et Nanoscience</div>
-                        <div class="education-institution">Grenoble-INP Phelma</div>
-                        <div class="education-meta">2011 - 2014 | Grenoble</div>
-                        <p class="experience-description">Mention très bien</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-degree">Classe préparatoires - Physique et Chimie</div>
-                        <div class="education-institution">CPE Lyon</div>
-                        <div class="education-meta">2009 - 2011 | Lyon</div>
-                        <p class="experience-description">CCP rang: 405ème/4854</p>
-                    </div>
-                    
-                </section>
-                
-
-                
-                <section class="section">
-                    <h2 class="section-title">Projects</h2>
-                    
-                    <div class="project-item">
-                        <div class="project-name">Solution interne de gestion des congés</div>
-                        <p class="project-description">Développement d&#39;une solution interne pour poser des jours de congé</p>
-                        
-                        <div class="project-tech">Angular, TypeScript, Kotlin</div>
-                        
-                    </div>
-                    
-                    <div class="project-item">
-                        <div class="project-name">Logiciel de pilotage de machines d&#39;inspection</div>
-                        <p class="project-description">Développement from scratch d&#39;un logiciel pour piloter des machines d&#39;inspection de wafer</p>
-                        
-                        <div class="project-tech">C#, .Net framework 4.8, WCF, WPF, SQL Server</div>
-                        
-                    </div>
-                    
-                    <div class="project-item">
-                        <div class="project-name">Module algorithmique de traitement de layout</div>
-                        <p class="project-description">Élaboration d&#39;une solution algorithmique de traitement de layout et intégration dans une solution micro-service</p>
-                        
-                        <div class="project-tech">Kotlin, Java, Maven, Python, Docker</div>
-                        
-                    </div>
-                    
-                </section>
-                
-            </div>
-
-            
-            <div class="right-column">
-                
-                <section class="section">
-                    <h2 class="section-title">Skills</h2>
-                    
-                    <div class="skill-category">
-                        <div class="skill-category-name">Langages (Frameworks)</div>
-                        <div class="skill-tags">
-                            
-                            <span class="skill-tag">Java/Kotlin (Spring, Maven)</span>
-                            
-                            <span class="skill-tag">C#/.Net (WCF, WPF)</span>
-                            
-                            <span class="skill-tag">Python</span>
-                            
-                            <span class="skill-tag">C&#43;&#43;</span>
-                            
-                            <span class="skill-tag">JavaScript/TypeScript (Angular)</span>
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-category-name">Méthodes &amp; Pratiques</div>
-                        <div class="skill-tags">
-                            
-                            <span class="skill-tag">Software Craft</span>
-                            
-                            <span class="skill-tag">Scrum</span>
-                            
-                            <span class="skill-tag">Pair/Mob Programming</span>
-                            
-                            <span class="skill-tag">Tests, TDD</span>
-                            
-                            <span class="skill-tag">Clean code</span>
-                            
-                            <span class="skill-tag">Refactoring</span>
-                            
-                            <span class="skill-tag">Baby step</span>
-                            
-                            <span class="skill-tag">Architecture logiciel</span>
-                            
-                            <span class="skill-tag">Design patterns</span>
-                            
-                            <span class="skill-tag">DDD</span>
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-category-name">Outillage</div>
-                        <div class="skill-tags">
-                            
-                            <span class="skill-tag">Git</span>
-                            
-                            <span class="skill-tag">Gitlab</span>
-                            
-                            <span class="skill-tag">IntelliJ</span>
-                            
-                            <span class="skill-tag">Rider</span>
-                            
-                            <span class="skill-tag">Pycharm</span>
-                            
-                            <span class="skill-tag">Linux (Ubuntu)</span>
-                            
-                            <span class="skill-tag">Docker</span>
-                            
-                            <span class="skill-tag">Docker-compose</span>
-                            
-                            <span class="skill-tag">Protobuf</span>
-                            
-                            <span class="skill-tag">JIRA</span>
-                            
-                            <span class="skill-tag">Azure Devops</span>
-                            
-                            <span class="skill-tag">Github</span>
-                            
-                            <span class="skill-tag">Jenkins</span>
-                            
-                            <span class="skill-tag">Postman</span>
-                            
-                            <span class="skill-tag">Microsoft SQL Server</span>
-                            
-                        </div>
-                    </div>
-                    
-                </section>
-                
-
-                
-                <section class="section">
-                    <h2 class="section-title">Languages</h2>
-                    
-                    <div class="language-item">
-                        <span class="language-name">Français</span>
-                        <span class="language-level">Maternelle</span>
-                    </div>
-                    
-                    <div class="language-item">
-                        <span class="language-name">Anglais</span>
-                        <span class="language-level">Courant</span>
-                    </div>
-                    
-                </section>
-                
-
-                
-                <section class="section">
-                    <h2 class="section-title">Certifications</h2>
-                    
-                    <div class="certification-item">
-                        <div class="certification-name">Présentation AlpesCraft</div>
-                        <div class="certification-meta">AlpesCraft - 2025</div>
-                    </div>
-                    
-                    <div class="certification-item">
-                        <div class="certification-name">Article - Stratégies de Tests</div>
-                        <div class="certification-meta">Blog Sogilis - 2024</div>
-                    </div>
-                    
-                    <div class="certification-item">
-                        <div class="certification-name">Article - Pair Programming</div>
-                        <div class="certification-meta">Blog Sogilis - 2024</div>
-                    </div>
-                    
-                    <div class="certification-item">
-                        <div class="certification-name">ATLAS four-top quark production</div>
-                        <div class="certification-meta">CERN - 2020</div>
-                    </div>
-                    
-                    <div class="certification-item">
-                        <div class="certification-name">Ma Thèse en 180 secondes</div>
-                        <div class="certification-meta">Université Grenoble-Alpes - 2017</div>
-                    </div>
-                    
-                </section>
-                
-
-                
-                <section class="section">
-                    <h2 class="section-title">Interests</h2>
-                    <div class="interests-list">
-                        
-                        <span class="interest-item">Software Craft</span>
-                        
-                        <span class="interest-item">Agilité</span>
-                        
-                        <span class="interest-item">Architecture moderne</span>
-                        
-                        <span class="interest-item">Résolution de problèmes complexes</span>
-                        
-                        <span class="interest-item">Partage de connaissances</span>
-                        
-                        <span class="interest-item">Coding dojo</span>
-                        
-                        <span class="interest-item">Physique des particules</span>
-                        
-                    </div>
-                </section>
-                
             </div>
         </div>
+    </header>
+
+
+    <div class="main-content">
+
+        <div class="left-column">
+
+            <section class="section">
+                <h2 class="section-title">Summary</h2>
+                <p class="summary">Passionné par le software craft, l&#39;agilité et l&#39;architecture moderne, je
+                    cherche aujourd&#39;hui à rejoindre une équipe qui, comme moi, vise l&#39;excellence technique pour
+                    construire des produits logiciels durables, de qualité et surtout au plus proche des besoins
+                    métiers. J&#39;ai un attrait certain pour la résolution de problèmes complexes et pour trouver des
+                    solutions simples, efficaces et adaptées au contexte. J&#39;ai également une soif insatiable d&#39;enrichir
+                    et de partager mes connaissances.
+                </p>
+            </section>
+
+
+            <section class="section">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="experience-title">Développeur full-stack confirmé</span>
+                            <span class="experience-company"> - Sogilis (ESN)</span>
+                        </div>
+                        <div class="experience-meta">2022-01 - present | Grenoble</div>
+                    </div>
+                    <p class="experience-description">Développement full-stack et expertise technique chez Sogilis</p>
+
+                    <ul class="highlights">
+
+                        <li>Développement d&#39;un module python d&#39;interfaçage avec gRPC</li>
+
+                        <li>Mise en place d&#39;un système de tests d&#39;intégration en approval testing</li>
+
+                        <li>Développement de nouveaux modules algorithmiques par itération</li>
+
+                        <li>Analyse de la qualité logiciel et de la dette technique avec CodeScene</li>
+
+                        <li>Accompagnement sur la spécification des besoins et la recherche de feedback utilisateur</li>
+
+                        <li>Mise en place de l&#39;architecture client-serveur</li>
+
+                        <li>Mise en place d&#39;une stratégie de tests automatisés</li>
+
+                        <li>Aide sur le développement d&#39;algorithme de computer vision</li>
+
+                        <li>Automatisation du déploiement sur machine</li>
+
+                        <li>Développement algorithmique</li>
+
+                        <li>Refactoring et modularisation de la base de code</li>
+
+                        <li>Migration de la base de code (ex: java 11) et dockerisation</li>
+
+                        <li>Reprise en main de la CI et des tests automatisés</li>
+
+                        <li>Développement d&#39;une solution interne pour poser des jours de congé (Angular, TS &amp;
+                            Kotlin)
+                        </li>
+
+                        <li>Leader et animation d&#39;un pôle de partage de connaissance</li>
+
+                        <li>Mise en place et animation de formations internes</li>
+
+                        <li>Aide au recrutement et suivi de période d&#39;essai</li>
+
+                        <li>Participation à des avant-ventes et qualification de projet</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="experience-title">Associé de recherche</span>
+                            <span class="experience-company"> - University of Arizona, USA &amp; CERN</span>
+                        </div>
+                        <div class="experience-meta">2018-02 - 2021-12 | International</div>
+                    </div>
+                    <p class="experience-description">Recherche en physique des particules et analyse de données du
+                        LHC</p>
+
+                    <ul class="highlights">
+
+                        <li>Coordination de deux équipes de projet d&#39;analyse</li>
+
+                        <li>Identification d&#39;événements rares par apprentissage supervisé (BDT, NN)</li>
+
+                        <li>Mise en place d&#39;un nouveau système d&#39;acquisition de données</li>
+
+                        <li>Encadrement de trois doctorants</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="experience-title">Doctorant</span>
+                            <span class="experience-company"> - LPSC</span>
+                        </div>
+                        <div class="experience-meta">2014-07 - 2017-10 | Grenoble</div>
+                    </div>
+                    <p class="experience-description">Recherche de nouveaux phénomènes physiques dans les données du
+                        LHC</p>
+
+                    <ul class="highlights">
+
+                        <li>Modélisation de bruit de fond par approche data-driven</li>
+
+                        <li>Modélisation de signal par simulations Monte-Carlo</li>
+
+                        <li>Test d&#39;hypothèses pour différents scénarios de physique</li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+
+                <div class="education-item">
+                    <div class="education-degree">PhD - Physique des particules Expérimentale</div>
+                    <div class="education-institution">Université Grenoble-Alpes</div>
+                    <div class="education-meta">2014 - 2017 | Grenoble</div>
+
+                </div>
+
+                <div class="education-item">
+                    <div class="education-degree">Master - Physique subatomique et Astroparticule</div>
+                    <div class="education-institution">Université Grenoble-Alpes</div>
+                    <div class="education-meta">2012 - 2014 | Grenoble</div>
+                    <p class="experience-description">1st/18</p>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-degree">Diplôme d&#39;ingénieur - Physique et Nanoscience</div>
+                    <div class="education-institution">Grenoble-INP Phelma</div>
+                    <div class="education-meta">2011 - 2014 | Grenoble</div>
+                    <p class="experience-description">Mention très bien</p>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-degree">Classe préparatoires - Physique et Chimie</div>
+                    <div class="education-institution">CPE Lyon</div>
+                    <div class="education-meta">2009 - 2011 | Lyon</div>
+                    <p class="experience-description">CCP rang: 405ème/4854</p>
+                </div>
+
+            </section>
+
+
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project-item">
+                    <div class="project-name">Solution interne de gestion des congés</div>
+                    <p class="project-description">Développement d&#39;une solution interne pour poser des jours de
+                        congé</p>
+
+                    <div class="project-tech">Angular, TypeScript, Kotlin</div>
+
+                </div>
+
+                <div class="project-item">
+                    <div class="project-name">Logiciel de pilotage de machines d&#39;inspection</div>
+                    <p class="project-description">Développement from scratch d&#39;un logiciel pour piloter des
+                        machines d&#39;inspection de wafer</p>
+
+                    <div class="project-tech">C#, .Net framework 4.8, WCF, WPF, SQL Server</div>
+
+                </div>
+
+                <div class="project-item">
+                    <div class="project-name">Module algorithmique de traitement de layout</div>
+                    <p class="project-description">Élaboration d&#39;une solution algorithmique de traitement de layout
+                        et intégration dans une solution micro-service</p>
+
+                    <div class="project-tech">Kotlin, Java, Maven, Python, Docker</div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <div class="right-column">
+
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skill-category">
+                    <div class="skill-category-name">Langages (Frameworks)</div>
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">Java/Kotlin (Spring, Maven)</span>
+
+                        <span class="skill-tag">C#/.Net (WCF, WPF)</span>
+
+                        <span class="skill-tag">Python</span>
+
+                        <span class="skill-tag">C&#43;&#43;</span>
+
+                        <span class="skill-tag">JavaScript/TypeScript (Angular)</span>
+
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-name">Méthodes &amp; Pratiques</div>
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">Software Craft</span>
+
+                        <span class="skill-tag">Scrum</span>
+
+                        <span class="skill-tag">Pair/Mob Programming</span>
+
+                        <span class="skill-tag">Tests, TDD</span>
+
+                        <span class="skill-tag">Clean code</span>
+
+                        <span class="skill-tag">Refactoring</span>
+
+                        <span class="skill-tag">Baby step</span>
+
+                        <span class="skill-tag">Architecture logiciel</span>
+
+                        <span class="skill-tag">Design patterns</span>
+
+                        <span class="skill-tag">DDD</span>
+
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-name">Outillage</div>
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">Git</span>
+
+                        <span class="skill-tag">Gitlab</span>
+
+                        <span class="skill-tag">IntelliJ</span>
+
+                        <span class="skill-tag">Rider</span>
+
+                        <span class="skill-tag">Pycharm</span>
+
+                        <span class="skill-tag">Linux (Ubuntu)</span>
+
+                        <span class="skill-tag">Docker</span>
+
+                        <span class="skill-tag">Docker-compose</span>
+
+                        <span class="skill-tag">Protobuf</span>
+
+                        <span class="skill-tag">JIRA</span>
+
+                        <span class="skill-tag">Azure Devops</span>
+
+                        <span class="skill-tag">Github</span>
+
+                        <span class="skill-tag">Jenkins</span>
+
+                        <span class="skill-tag">Postman</span>
+
+                        <span class="skill-tag">Microsoft SQL Server</span>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section class="section">
+                <h2 class="section-title">Languages</h2>
+
+                <div class="language-item">
+                    <span class="language-name">Français</span>
+                    <span class="language-level">Maternelle</span>
+                </div>
+
+                <div class="language-item">
+                    <span class="language-name">Anglais</span>
+                    <span class="language-level">Courant</span>
+                </div>
+
+            </section>
+
+
+            <section class="section">
+                <h2 class="section-title">Certifications</h2>
+
+                <div class="certification-item">
+                    <div class="certification-name">Présentation AlpesCraft</div>
+                    <div class="certification-meta">AlpesCraft - 2025</div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-name">Article - Stratégies de Tests</div>
+                    <div class="certification-meta">Blog Sogilis - 2024</div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-name">Article - Pair Programming</div>
+                    <div class="certification-meta">Blog Sogilis - 2024</div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-name">ATLAS four-top quark production</div>
+                    <div class="certification-meta">CERN - 2020</div>
+                </div>
+
+                <div class="certification-item">
+                    <div class="certification-name">Ma Thèse en 180 secondes</div>
+                    <div class="certification-meta">Université Grenoble-Alpes - 2017</div>
+                </div>
+
+            </section>
+
+
+            <section class="section">
+                <h2 class="section-title">Interests</h2>
+                <div class="interests-list">
+
+                    <span class="interest-item">Software Craft</span>
+
+                    <span class="interest-item">Agilité</span>
+
+                    <span class="interest-item">Architecture moderne</span>
+
+                    <span class="interest-item">Résolution de problèmes complexes</span>
+
+                    <span class="interest-item">Partage de connaissances</span>
+
+                    <span class="interest-item">Coding dojo</span>
+
+                    <span class="interest-item">Physique des particules</span>
+
+                </div>
+            </section>
+
+        </div>
     </div>
+</div>
 </body>
 </html>
