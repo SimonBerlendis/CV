@@ -184,6 +184,9 @@ body {
 
 .experience-header {
     margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .experience-title {
@@ -201,6 +204,8 @@ body {
     font-size: 0.85em;
     color: var(--text-light);
     margin-top: 3px;
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .experience-description {
@@ -240,6 +245,13 @@ body {
     margin-bottom: 0;
 }
 
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
 .education-degree {
     font-weight: 600;
 }
@@ -252,6 +264,8 @@ body {
 .education-meta {
     font-size: 0.85em;
     color: var(--text-light);
+    text-align: right;
+    flex-shrink: 0;
 }
 
 
