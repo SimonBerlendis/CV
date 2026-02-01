@@ -201,7 +201,7 @@ body {
 .missions-heading, .internal-activities-heading {
     font-weight: 500;
     font-size: 0.95em;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 6px;
     margin-left: 2px;
 }
@@ -282,7 +282,7 @@ body {
 }
 
 .experience-header {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -319,9 +319,10 @@ body {
 
 .highlights li {
     position: relative;
-    padding-left: 18px;
-    margin-bottom: 5px;
+    padding-left: 12px;
+    margin-bottom: 4px;
     color: var(--text-color);
+    font-size: 0.9em;
 }
 
 .highlights li::before {
