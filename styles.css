@@ -308,7 +308,8 @@ body {
 }
 
 .experience-description {
-    color: var(--text-light);
+    color: var(--text-color);
+    font-style: italic;
 }
 
 .highlights {
