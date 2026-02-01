@@ -242,6 +242,7 @@ body {
     font-size: 0.9em;
     color: var(--text-color);
     margin-bottom: 6px;
+    font-style: italic;
 }
 
 .sub-experience-values {
