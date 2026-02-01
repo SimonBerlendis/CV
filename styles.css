@@ -183,7 +183,7 @@ body {
 }
 
 .sub-experience-item {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     margin-left: 5px;
     padding-left: 5px;
     border-left: 2px solid var(--gold);
@@ -192,6 +192,18 @@ body {
 
 .sub-experience-item:last-child {
     margin-bottom: 0;
+}
+
+.missions-container {
+    margin-bottom: 12px;
+}
+
+.missions-heading {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    margin-left: 2px;
 }
 
 .sub-experience-header {
@@ -206,6 +218,16 @@ body {
     font-weight: 500;
     font-size: 0.95em;
     color: var(--text-color);
+    position: relative;
+    padding-left: 15px;
+}
+
+.sub-experience-title::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 1.2em;
 }
 
 .sub-experience-date {
