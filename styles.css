@@ -241,7 +241,7 @@ body {
 .sub-experience-description {
     font-size: 0.9em;
     color: var(--text-color);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .sub-experience-values {
@@ -270,7 +270,14 @@ body {
 .sub-experience-tech {
     font-size: 0.8em;
     color: var(--primary-color);
+}
+
+.sub-experience-tech strong {
     font-style: italic;
+}
+
+.sub-experience-tech span {
+    font-style: normal;
 }
 
 .experience-header {
