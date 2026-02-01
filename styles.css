@@ -198,8 +198,8 @@ body {
     margin-bottom: 12px;
 }
 
-.missions-heading {
-    font-weight: 600;
+.missions-heading, .internal-activities-heading {
+    font-weight: 500;
     font-size: 0.95em;
     color: var(--primary-color);
     margin-bottom: 6px;
